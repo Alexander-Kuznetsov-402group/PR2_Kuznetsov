@@ -24,31 +24,32 @@ namespace PR2_Kuznetsov
         {
             InitializeComponent();
             Itog.Text = "Ст. гр. ИСП Кузнецов А.А.";
+            Pi.Text = "3,14";
+            g.Text = "9.81" + "м/с*2";
         }
 
         private void Schet_Click(object sender, RoutedEventArgs e)
         {
             Itog.Text += Environment.NewLine + "Практическая работа 2";
-            // Считывание значения X
-            double x = double.Parse(X.Text);
-            // Вывод значения X в окно
-            Itog.Text += Environment.NewLine + "X =" + x.ToString();
-            // Считывает значение Y
-            double y = double.Parse(Y.Text);
-            // Вывод значения Y в окно
-            Itog.Text += Environment.NewLine + "Y = " + y.ToString();
-            // Считывание значения Z
-            double z = double.Parse(Z.Text);
-            // Вывод значения Z в окно
-            Itog.Text += Environment.NewLine + "Z = " + z.ToString();
+            // Считывание значения I
+            double i = double.Parse(I.Text);
+            // Вывод значения I в окно
+            Itog.Text += Environment.NewLine + "I =" + I.ToString();
+            // Считывает значение Pi
+            double pi = double.Parse(Pi.Text);
+            // Вывод значения Pi в окно
+            Itog.Text += Environment.NewLine + "Pi = " + Pi.ToString();
+            // Считывание значения g
+            double G = double.Parse(g.Text);
+            // Вывод значения g в окно
+            Itog.Text += Environment.NewLine + "G = " + g.ToString();
+            
 
-            // Вычисляем арифметическое выражение
-            double a = Math.Tan(x + y) * Math.Tan(x + y);
-            double b = Math.Exp(y - z);
-            double c = Math.Sqrt(Math.Cos(x * x) + Math.Sin(z * z));
-            double u = a - b * c;
+            // Вычисляем математический маятник
+            double c = I / g;
+            double t = 2*pi*(Math.Sqrt(с));
             // Выводим результат в окно
-            Itog.Text += Environment.NewLine + "Результат U = " + u.ToString();
+            Itog.Text += Environment.NewLine + "Результат t = " + t.ToString();
         }
     }
 }
